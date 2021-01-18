@@ -1,0 +1,19 @@
+<!DOCTYPE etl SYSTEM "http://scriptella.javaforge.com/dtd/etl.dtd">
+<etl>
+  <connection id="out" driver="$database" url="$url" classpath="" user="$user" password="$password">
+  </connection>
+  <script connection-id="out">
+  <!-- //insert into log values ('Import completed',now()) -->
+
+  update product set mfgpartno = replace(mfgpartno, "-ICECATMAPPED", "");
+
+  update productattribute set displayvalue = replace(displayvalue, "-ICECATMAPPED", "") where attributeid = 1450;
+
+  update productkeywords set keywords = replace(keywords, "-icecatmapped", "");
+
+
+  <onerror retry="true" maxRetryCount="3"></onerror>
+</script>
+  <command>
+  </command>
+</etl>

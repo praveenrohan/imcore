@@ -1,0 +1,16 @@
+countries_url:
+  AT:
+    name: "Austria"
+    url: "https://pimat.ingrammicro.com"
+
+  DE:
+    name: "Germany"
+    url: "https://pimde.ingrammicro.com"
+
+  FR:
+    name: "France"
+    url: "https://pim.ingrammicro.com"
+
+  MD:
+    name: "United States"
+    url: "https://pimus.ingrammicro.com"
