@@ -1,0 +1,123 @@
+# remove the following ignores for your project
+/app/constants.php
+/var/classes/DataObject
+
+# symfony default
+/.web-server-pid
+/build/
+/phpunit.xml
+/web/bundles/
+
+# local config
+/.env
+!/app/config/local
+/app/config/local/*
+!app/config/local/.gitkeep
+/app/config/config.yml
+# pimcore legacy (remove this for your own development)
+!/legacy
+/legacy/*
+!legacy/.gitkeep
+!legacy/bundle
+
+/var/*
+!/var/.gitkeep
+!/var/classes/
+/var/classes/DataObject
+
+!/var/config
+/var/config/system.yml
+/var/config/debug-mode.php
+/var/config/maintenance.php
+
+# project specific recommendations
+/var/config/tag-manager.php
+/var/config/reports.php
+
+
+/web/var/
+/web/sitemap*.xml
+
+# PHP-CS-Fixer
+/.php_cs
+/.php_cs.cache
+
+# composer.local.json is referenced in composer-merge-plugin
+# remove this for your projects if you want to track the file
+/composer.local.json
+
+# composer
+/composer.lock
+/vendor/
+
+# PhpStorm / IDEA
+.idea
+# NetBeans
+nbproject
+
+# keep legacy paths ignored for easier migration
+/plugins/
+/tools/
+/website/
+.temp
+
+#ignore backup files
+*.bak
+*.poc
+#bash file
+cache.sh
+.gitsecret/keys/random_seed
+!*.secret
+.eb-benstalk/templates/us/stage/secrets.php
+.eb-benstalk/templates/us/stage/database.yml
+.eb-benstalk/templates/us/stage/elastic_config.php
+.eb-benstalk/templates/us/stage/etilize.client.properties
+.eb-benstalk/templates/us/stage/icecat.client.properties
+.eb-benstalk/templates/us/prod/secrets.php
+.eb-benstalk/templates/us/prod/database.yml
+.eb-benstalk/templates/us/prod/elastic_config.php
+.eb-benstalk/templates/us/prod/etilize.client.properties
+.eb-benstalk/templates/us/prod/icecat.client.properties
+.eb-benstalk/templates/us/prod/mysql-backup.sh
+.eb-benstalk/templates/fr/stage/secrets.php
+.eb-benstalk/templates/fr/stage/database.yml
+.eb-benstalk/templates/fr/stage/elastic_config.php
+.eb-benstalk/templates/fr/stage/etilize.client.properties
+.eb-benstalk/templates/fr/stage/icecat.client.properties
+.eb-benstalk/templates/fr/prod/secrets.php
+.eb-benstalk/templates/fr/prod/database.yml
+.eb-benstalk/templates/fr/prod/elastic_config.php
+.eb-benstalk/templates/fr/prod/etilize.client.properties
+.eb-benstalk/templates/fr/prod/icecat.client.properties
+.eb-benstalk/templates/fr/prod/mysql-backup.sh
+.eb-benstalk/templates/de/stage/secrets.php
+.eb-benstalk/templates/de/stage/database.yml
+.eb-benstalk/templates/de/stage/elastic_config.php
+.eb-benstalk/templates/de/stage/etilize.client.properties
+.eb-benstalk/templates/de/stage/icecat.client.properties
+.eb-benstalk/templates/de/prod/secrets.php
+.eb-benstalk/templates/de/prod/database.yml
+.eb-benstalk/templates/de/prod/elastic_config.php
+.eb-benstalk/templates/de/prod/etilize.client.properties
+.eb-benstalk/templates/de/prod/icecat.client.properties
+.eb-benstalk/templates/de/prod/mysql-backup.sh
+.eb-benstalk/templates/at/stage/secrets.php
+.eb-benstalk/templates/at/stage/database.yml
+.eb-benstalk/templates/at/stage/elastic_config.php
+.eb-benstalk/templates/at/stage/etilize.client.properties
+.eb-benstalk/templates/at/stage/icecat.client.properties
+.eb-benstalk/templates/at/prod/secrets.php
+.eb-benstalk/templates/at/prod/database.yml
+.eb-benstalk/templates/at/prod/elastic_config.php
+.eb-benstalk/templates/at/prod/etilize.client.properties
+.eb-benstalk/templates/at/prod/icecat.client.properties
+.eb-benstalk/templates/at/prod/mysql-backup.sh
+server_config_files/qc/secrets.php
+server_config_files/qc/database.yml
+server_config_files/qc/elastic_config.php
+server_config_files/qc/config.yml
+server_config_files/qc/system.yml
+server_config_files/qc/config1.yml
+server_config_files/qc/database1.yml
+server_config_files/qc/system1.yml
+server_config_files/qc/elastic_config1.php

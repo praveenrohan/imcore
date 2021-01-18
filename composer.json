@@ -1,0 +1,84 @@
+{
+  "name": "pimcore/skeleton",
+  "type": "project",
+  "license": "GPL-3.0-or-later",
+  "config": {
+    "optimize-autoloader": true,
+    "sort-packages": true
+  },
+  "require": {
+    "php": ">=7.2",
+    "aws/aws-sdk-php": "^3.108",
+    "elasticsearch/elasticsearch": "~5.4.0",
+    "graze/console-diff-renderer": "^0.6.2",
+    "graze/parallel-process": "^0.8.1",
+    "guzzlehttp/ringphp": "~1.1.1",
+    "guzzlehttp/streams": "~3.0.0",
+    "intervention/image": "^2.5",
+    "league/csv": "^9.2",
+    "ongr/elasticsearch-dsl": "~5.0.6",
+    "phpoffice/phpspreadsheet": "1.9.0",
+    "pimcore/pimcore": "6.3.6",
+    "react/promise": "~2.7.1",
+    "simplesamlphp/saml2": "~3.4.1",
+    "wikimedia/composer-merge-plugin": "^1.4",
+    "box/spout": "~3.0",
+    "symfony/monolog-bundle": "3.5.0"
+  },
+  "conflict": {
+    "monolog/monolog": ">=2",
+    "symfony/symfony": ">=4.4"
+  },
+  "require-dev": {
+    "cache/integration-tests": "^0.16.0",
+    "codeception/codeception": "~2.4.5"
+  },
+  "autoload": {
+    "psr-4": {
+      "": ["src/"],
+      "Pimcore\\Model\\DataObject\\": "var/classes/DataObject",
+      "Pimcore\\Model\\Object\\": "var/classes/Object",
+      "Website\\": "legacy/website/lib"
+    },
+    "classmap": [
+      "app/AppKernel.php"
+    ]
+  },
+  "scripts": {
+    "post-create-project-cmd": "Pimcore\\Composer::postCreateProject",
+    "post-install-cmd": [
+      "Pimcore\\Composer::postInstall",
+      "@pimcore-scripts"
+    ],
+    "post-update-cmd": [
+      "Pimcore\\Composer::postUpdate",
+      "@pimcore-scripts",
+      "Pimcore\\Composer::executeMigrationsUp",
+      "@pimcore-scripts",
+      "AppBundle\\EventListener\\Migration::executeMigrationsUp"
+    ],
+    "pimcore-scripts": [
+      "Pimcore\\Composer::clearCache",
+      "Pimcore\\Composer::installAssets"
+    ]
+  },
+  "extra": {
+    "symfony-app-dir": "app",
+    "symfony-bin-dir": "bin",
+    "symfony-var-dir": "var",
+    "symfony-web-dir": "web",
+    "symfony-tests-dir": "tests",
+    "symfony-assets-install": "relative",
+    "merge-plugin": {
+      "include": [
+        "composer.local.json"
+      ],
+      "recurse": true,
+      "replace": true,
+      "merge-dev": true,
+      "merge-extra": false,
+      "merge-extra-deep": false,
+      "merge-scripts": false
+    }
+  }
+}
